@@ -13,6 +13,7 @@ namespace CoolBatchPopulator
         [STAThread]
         static void Main()
         {
+            // Evandro este aqui
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmCoolBatchPopulator());
