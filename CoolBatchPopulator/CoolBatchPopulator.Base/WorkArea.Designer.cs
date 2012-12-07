@@ -28,8 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // WorkArea
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Name = "WorkArea";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkArea_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorkArea_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WorkArea_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.WorkArea_MouseUp);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

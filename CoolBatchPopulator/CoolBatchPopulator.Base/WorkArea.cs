@@ -53,7 +53,7 @@ namespace CoolBatchPopulator
 
         #region Other Functions
 
-        public void Initialize(Tool[] tools)
+        public void Initialize()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
@@ -62,20 +62,12 @@ namespace CoolBatchPopulator
 
             graphicsList = new GraphicsList();
 
-            // create array of drawing tools
-            if (tools != null)
-            {
-                if (tools.Count() < 1)
-                {
-                    throw new Exception("Tools array must not be empty.");
-                }
-
-            }
-            else 
-            {
-                throw new Exception("Tools array must be initialized.");
-            }
-   
+            tools = new Tool[(int)DrawToolType.NumberOfTools];
+            tools[(int)DrawToolType.Pointer] = new ToolPointer();
+            //tools[(int)DrawToolType.File] = new ToolRectangle();
+            //tools[(int)DrawToolType.Database] = new ToolEllipse();
+            //tools[(int)DrawToolType.Process] = new ToolLine();
+            //tools[(int)DrawToolType.Connector] = new ToolPolygon();
         }
 
         #endregion
@@ -84,11 +76,12 @@ namespace CoolBatchPopulator
         public WorkArea()
         {
             InitializeComponent();
+            Initialize();
         }
 
         #region - Event Handlers -
 
-        private void DrawArea_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void WorkArea_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
             SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 255));
             e.Graphics.FillRectangle(brush,
@@ -107,7 +100,7 @@ namespace CoolBatchPopulator
         /// Left button down event is passed to active tool.
         /// Right button down event is handled in this class.
         /// </summary>
-        private void DrawArea_MouseDown(object sender, MouseEventArgs e)
+        private void WorkArea_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
                 tools[(int)activeTool].OnMouseDown(this, e);
@@ -120,7 +113,7 @@ namespace CoolBatchPopulator
         /// Moving without button pressed or with left button pressed
         /// is passed to active tool.
         /// </summary>
-        private void DrawArea_MouseMove(object sender, MouseEventArgs e)
+        private void WorkArea_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.None)
                 tools[(int)activeTool].OnMouseMove(this, e);
@@ -132,7 +125,7 @@ namespace CoolBatchPopulator
         /// Mouse up event.
         /// Left button up event is passed to active tool.
         /// </summary>
-        private void DrawArea_MouseUp(object sender, MouseEventArgs e)
+        private void WorkArea_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
                 tools[(int)activeTool].OnMouseUp(this, e);

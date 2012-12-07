@@ -25,15 +25,8 @@ namespace CoolBatchPopulator
             workArea.Location = new System.Drawing.Point(0, 0);
             workArea.Size = new System.Drawing.Size(10, 10);
             this.Controls.Add(workArea);
-
-            Tool[] tools = new Tool[(int)DrawToolType.NumberOfTools];
-            //tools[(int)DrawToolType.Pointer] = new ToolPointer();
-            //tools[(int)DrawToolType.File] = new ToolRectangle();
-            //tools[(int)DrawToolType.Database] = new ToolEllipse();
-            //tools[(int)DrawToolType.Process] = new ToolLine();
-            //tools[(int)DrawToolType.Connector] = new ToolPolygon();
-
-            workArea.Initialize(tools);
+                     
+            workArea.Initialize();
 
             ResizeWorkArea();
         }

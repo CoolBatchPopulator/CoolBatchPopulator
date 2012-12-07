@@ -8,7 +8,7 @@ namespace CoolBatchPopulator
     /// <summary>
     /// Pointer tool
     /// </summary>
-    class ToolPointer : Tool
+    public class ToolPointer : Tool
     {
         private enum SelectionMode
         {
@@ -28,8 +28,6 @@ namespace CoolBatchPopulator
         private Point lastPoint = new Point(0, 0);
         private Point startPoint = new Point(0, 0);
 
-        bool wasMove;
-
         public ToolPointer()
         {
         }
@@ -41,7 +39,6 @@ namespace CoolBatchPopulator
         /// <param name="e"></param>
         public override void OnMouseDown(WorkArea workArea, MouseEventArgs e)
         {
-            wasMove = false;
 
             selectMode = SelectionMode.None;
             Point point = new Point(e.X, e.Y);
@@ -139,21 +136,22 @@ namespace CoolBatchPopulator
             Point point = new Point(e.X, e.Y);
             Point oldPoint = lastPoint;
 
-            wasMove = true;
-
             // set cursor when mouse button is not pressed
             if (e.Button == MouseButtons.None)
             {
                 Cursor cursor = null;
 
-                for (int i = 0; i < drawArea.GraphicsList.Count; i++)
+                if (drawArea.GraphicsList != null) 
                 {
-                    int n = drawArea.GraphicsList[i].HitTest(point);
-
-                    if (n > 0)
+                    for (int i = 0; i < drawArea.GraphicsList.Count; i++)
                     {
-                        cursor = drawArea.GraphicsList[i].GetHandleCursor(n);
-                        break;
+                        int n = drawArea.GraphicsList[i].HitTest(point);
+
+                        if (n > 0)
+                        {
+                            cursor = drawArea.GraphicsList[i].GetHandleCursor(n);
+                            break;
+                        }
                     }
                 }
 
@@ -249,14 +247,6 @@ namespace CoolBatchPopulator
 
             drawArea.Capture = false;
             drawArea.Refresh();
-
-            if (commandChangeState != null && wasMove)
-            {
-                // Keep state after moving/resizing and add command to history
-                commandChangeState.NewState(drawArea.GraphicsList);
-                drawArea.AddCommandToHistory(commandChangeState);
-                commandChangeState = null;
-            }
         }
     }
 }
