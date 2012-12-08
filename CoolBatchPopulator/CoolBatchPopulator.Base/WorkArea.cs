@@ -50,7 +50,6 @@ namespace CoolBatchPopulator
 
         #endregion
 
-
         #region Other Functions
 
         public void Initialize()
@@ -66,12 +65,12 @@ namespace CoolBatchPopulator
             tools[(int)DrawToolType.Pointer] = new ToolPointer();
             //tools[(int)DrawToolType.File] = new ToolRectangle();
             //tools[(int)DrawToolType.Database] = new ToolEllipse();
-            //tools[(int)DrawToolType.Process] = new ToolLine();
+            // Evandro tools[(int)DrawToolType.Process] = new ToolLine();
+            tools[(int)DrawToolType.Process] = new ToolRectangle();
             //tools[(int)DrawToolType.Connector] = new ToolPolygon();
         }
 
         #endregion
-
 
         public WorkArea()
         {

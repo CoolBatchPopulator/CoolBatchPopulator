@@ -14,9 +14,9 @@ namespace CoolBatchPopulator
         /// <summary>
         /// Left nous button is pressed
         /// </summary>
-        /// <param name="drawArea"></param>
+        /// <param name="WorkArea"></param>
         /// <param name="e"></param>
-        public virtual void OnMouseDown(WorkArea drawArea, MouseEventArgs e)
+        public virtual void OnMouseDown(WorkArea workarea, MouseEventArgs e)
         {
         }
 
@@ -24,9 +24,9 @@ namespace CoolBatchPopulator
         /// <summary>
         /// Mouse is moved, left mouse button is pressed or none button is pressed
         /// </summary>
-        /// <param name="drawArea"></param>
+        /// <param name="WorkArea"></param>
         /// <param name="e"></param>
-        public virtual void OnMouseMove(WorkArea drawArea, MouseEventArgs e)
+        public virtual void OnMouseMove(WorkArea workarea, MouseEventArgs e)
         {
         }
 
@@ -34,9 +34,9 @@ namespace CoolBatchPopulator
         /// <summary>
         /// Left mouse button is released
         /// </summary>
-        /// <param name="drawArea"></param>
+        /// <param name="WorkArea"></param>
         /// <param name="e"></param>
-        public virtual void OnMouseUp(WorkArea drawArea, MouseEventArgs e)
+        public virtual void OnMouseUp(WorkArea workarea, MouseEventArgs e)
         {
         }
     }

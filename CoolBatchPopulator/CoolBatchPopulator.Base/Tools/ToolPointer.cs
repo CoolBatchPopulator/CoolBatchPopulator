@@ -43,6 +43,12 @@ namespace CoolBatchPopulator
             selectMode = SelectionMode.None;
             Point point = new Point(e.X, e.Y);
 
+            if (workArea.GraphicsList == null)
+            {
+                MessageBox.Show("Nenhum objeto");
+                return;
+            }
+
             // Test for resizing (only if control is selected, cursor is on the handle)
             foreach (DrawObject o in workArea.GraphicsList.Selection)
             {
@@ -122,6 +128,7 @@ namespace CoolBatchPopulator
                     Color.Black,
                     FrameStyle.Dashed);
             }
+        
         }
 
 

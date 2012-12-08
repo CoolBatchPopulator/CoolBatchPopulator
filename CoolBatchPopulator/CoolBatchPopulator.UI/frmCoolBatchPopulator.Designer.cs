@@ -58,7 +58,7 @@
             this.tbPointer.Image = ((System.Drawing.Image)(resources.GetObject("tbPointer.Image")));
             this.tbPointer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbPointer.Name = "tbPointer";
-            this.tbPointer.Size = new System.Drawing.Size(65, 22);
+            this.tbPointer.Size = new System.Drawing.Size(61, 22);
             this.tbPointer.Text = "Pointer";
             this.tbPointer.Click += new System.EventHandler(this.tbPointer_Click);
             // 
@@ -67,7 +67,7 @@
             this.tbFile.Image = ((System.Drawing.Image)(resources.GetObject("tbFile.Image")));
             this.tbFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbFile.Name = "tbFile";
-            this.tbFile.Size = new System.Drawing.Size(45, 22);
+            this.tbFile.Size = new System.Drawing.Size(43, 22);
             this.tbFile.Text = "File";
             this.tbFile.Click += new System.EventHandler(this.tbFile_Click);
             // 
@@ -76,7 +76,7 @@
             this.tbDatabase.Image = ((System.Drawing.Image)(resources.GetObject("tbDatabase.Image")));
             this.tbDatabase.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbDatabase.Name = "tbDatabase";
-            this.tbDatabase.Size = new System.Drawing.Size(75, 22);
+            this.tbDatabase.Size = new System.Drawing.Size(73, 22);
             this.tbDatabase.Text = "Database";
             this.tbDatabase.Click += new System.EventHandler(this.tbDatabase_Click);
             // 
@@ -85,7 +85,7 @@
             this.tbProcess.Image = ((System.Drawing.Image)(resources.GetObject("tbProcess.Image")));
             this.tbProcess.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbProcess.Name = "tbProcess";
-            this.tbProcess.Size = new System.Drawing.Size(67, 22);
+            this.tbProcess.Size = new System.Drawing.Size(64, 22);
             this.tbProcess.Text = "Process";
             this.tbProcess.Click += new System.EventHandler(this.tbProcess_Click);
             // 
@@ -94,17 +94,18 @@
             this.tbConnector.Image = ((System.Drawing.Image)(resources.GetObject("tbConnector.Image")));
             this.tbConnector.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbConnector.Name = "tbConnector";
-            this.tbConnector.Size = new System.Drawing.Size(83, 22);
+            this.tbConnector.Size = new System.Drawing.Size(77, 22);
             this.tbConnector.Text = "Connector";
             this.tbConnector.Click += new System.EventHandler(this.tbConnector_Click);
             // 
             // workArea
             // 
             this.workArea.ActiveTool = CoolBatchPopulator.DrawToolType.Pointer;
+            this.workArea.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.workArea.GraphicsList = null;
-            this.workArea.Location = new System.Drawing.Point(169, 81);
+            this.workArea.Location = new System.Drawing.Point(555, 365);
             this.workArea.Name = "workArea";
-            this.workArea.Size = new System.Drawing.Size(150, 150);
+            this.workArea.Size = new System.Drawing.Size(10, 10);
             this.workArea.TabIndex = 0;
             // 
             // frmCoolBatchPopulator

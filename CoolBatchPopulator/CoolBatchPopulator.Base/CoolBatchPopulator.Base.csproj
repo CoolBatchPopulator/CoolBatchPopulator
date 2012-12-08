@@ -49,19 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DrawLine.cs" />
     <Compile Include="DrawObject.cs" />
     <Compile Include="DrawRectangle.cs" />
     <Compile Include="DrawToolType.cs" />
     <Compile Include="GraphicsList.cs" />
     <Compile Include="Tool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ToolLine.cs" />
+    <Compile Include="Tools\ToolObject.cs" />
     <Compile Include="Tools\ToolPointer.cs" />
+    <Compile Include="Tools\ToolRectangle.cs" />
     <Compile Include="WorkArea.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="WorkArea.Designer.cs">
       <DependentUpon>WorkArea.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DrawArea.resx">
+      <DependentUpon>DrawArea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
