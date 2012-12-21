@@ -63,11 +63,12 @@ namespace CoolBatchPopulator
 
             tools = new Tool[(int)DrawToolType.NumberOfTools];
             tools[(int)DrawToolType.Pointer] = new ToolPointer();
-            //tools[(int)DrawToolType.File] = new ToolRectangle();
+            tools[(int)DrawToolType.File] = new ToolArc();
             //tools[(int)DrawToolType.Database] = new ToolEllipse();
-            // Evandro tools[(int)DrawToolType.Process] = new ToolLine();
+            //tools[(int)DrawToolType.Process] = new ToolLine();
             tools[(int)DrawToolType.Process] = new ToolRectangle();
-            //tools[(int)DrawToolType.Connector] = new ToolPolygon();
+            tools[(int)DrawToolType.Connector] = new ToolLine();
+            // Evandro tools[(int)DrawToolType.Connector] = new ToolPolygon();
         }
 
         #endregion

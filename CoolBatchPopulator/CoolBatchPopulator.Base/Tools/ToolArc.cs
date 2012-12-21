@@ -6,20 +6,20 @@ using System.Drawing;
 namespace CoolBatchPopulator
 {
 	/// <summary>
-	/// Rectangle tool
+	/// Arc tool
 	/// </summary>
-	class ToolRectangle : ToolObject
+	class ToolArc : ToolObject
 	{
         private int Xini, Yini;
 
-		public ToolRectangle()
+        public ToolArc()
 		{
-            //Cursor = new Cursor(GetType(), "Rectangle.cur");
+            //Cursor = new Cursor(GetType(), "Arc.cur");
 		}
 
         public override void OnMouseDown(WorkArea workArea, MouseEventArgs e)
         {
-            AddNewObject(workArea, new DrawRectangle(e.X, e.Y, 70, 40));
+            AddNewObject(workArea, new DrawArc(e.X, e.Y, 70, 40));
         }
 
         public override void OnMouseMove(WorkArea workArea, MouseEventArgs e)
