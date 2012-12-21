@@ -36,24 +36,28 @@ namespace CoolBatchPopulator
             Rectangle _rect = new Rectangle();
             _rect = DrawRectangle.GetNormalizedRectangle(Rectangle);
 
-            int _x = _rect.X;
-            int _y = _rect.Y;
-            int _width = _rect.Width;
-            int _height = _rect.Height;
-            int _widthArc = (int)(_width * (0.42f));
-
-            if (_x == 0) { _x = 1; }
-            if (_y == 0) { _y = 1; }
-            if (_width == 0) { _width = 1; }
-            if (_height == 0) { _height = 1; }
+            int x = _rect.X;
+            int y = _rect.Y;
+            int w = _rect.Width;
+            int h = _rect.Height;
+            int wArc = (w/6);
+            int wArc2 = wArc * 2;
+            int wReta = w - wArc;
 
             // g.DrawArc(pen, DrawRectangle.GetNormalizedRectangle(Rectangle), -270, 180);
-            g.DrawArc(pen, _x,             _y, _width, _height, -270, 180);
-            g.DrawArc(pen, _x + _widthArc, _y, _width, _height, -270, 180);
+            g.DrawArc(pen, x - wArc, y, wArc2, h, 270, 180);
+            g.DrawArc(pen, x - wArc + wReta, y, wArc2, h, 270, 180);
 
-            g.DrawLine(pen, (int) (_x + _widthArc), _y,           (int) (_x + (_width - _widthArc)), _y);
-            g.DrawLine(pen, (int) (_x + _widthArc), _y + _height, (int) (_x + (_width - _widthArc)), _y + _height);
-            
+            Point SE = new Point(x, y);          //SuperiorEsquerdo
+            Point SD = new Point(x + wReta, y);             //SuperiorDireito
+
+            Point IE = new Point(x, y + h);      //InferioriEsquerdo
+            Point ID = new Point(x + wReta, y + h);         //InferiorDireito
+
+            g.DrawLine(pen, SE, SD);
+            g.DrawLine(pen, IE, ID);
+
+            //g.DrawRectangle(pen, x, y, w, h);
 
             pen.Dispose();
         }
