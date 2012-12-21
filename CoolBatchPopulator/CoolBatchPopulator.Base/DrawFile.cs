@@ -10,15 +10,15 @@ namespace CoolBatchPopulator
     /// <summary>
     /// Rectangle graphic object
     /// </summary>
-    class DrawArc: DrawRectangle
+    class DrawFile: DrawRectangle
     {
-        public DrawArc()
+        public DrawFile()
             : this(0, 0, 1, 1)
         {
         }
 
 
-        public DrawArc(int x, int y, int width, int height)
+        public DrawFile(int x, int y, int width, int height)
             : base()
         {
             Rectangle = new Rectangle(x, y, width, height);

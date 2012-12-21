@@ -63,8 +63,8 @@ namespace CoolBatchPopulator
 
             tools = new Tool[(int)DrawToolType.NumberOfTools];
             tools[(int)DrawToolType.Pointer] = new ToolPointer();
-            tools[(int)DrawToolType.File] = new ToolArc();
-            //tools[(int)DrawToolType.Database] = new ToolEllipse();
+            tools[(int)DrawToolType.File] = new ToolFile();
+            tools[(int)DrawToolType.Database] = new ToolDatabase();
             //tools[(int)DrawToolType.Process] = new ToolLine();
             tools[(int)DrawToolType.Process] = new ToolRectangle();
             tools[(int)DrawToolType.Connector] = new ToolLine();

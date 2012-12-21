@@ -49,7 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawArc.cs">
+    <Compile Include="DrawDatabase.cs" />
+    <Compile Include="DrawFile.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DrawLine.cs">
@@ -61,7 +62,8 @@
     <Compile Include="GraphicsList.cs" />
     <Compile Include="Tool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\ToolArc.cs">
+    <Compile Include="Tools\ToolDatabase.cs" />
+    <Compile Include="Tools\ToolFile.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tools\ToolLine.cs">

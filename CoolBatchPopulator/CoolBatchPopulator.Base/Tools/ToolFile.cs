@@ -8,18 +8,18 @@ namespace CoolBatchPopulator
 	/// <summary>
 	/// Arc tool
 	/// </summary>
-	class ToolArc : ToolObject
+	class ToolFile : ToolObject
 	{
         private int Xini, Yini;
 
-        public ToolArc()
+        public ToolFile()
 		{
             //Cursor = new Cursor(GetType(), "Arc.cur");
 		}
 
         public override void OnMouseDown(WorkArea workArea, MouseEventArgs e)
         {
-            AddNewObject(workArea, new DrawArc(e.X, e.Y, 70, 40));
+            AddNewObject(workArea, new DrawFile(e.X, e.Y, 70, 40));
         }
 
         public override void OnMouseMove(WorkArea workArea, MouseEventArgs e)
